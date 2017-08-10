@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import {Card}from '../model/card';
+
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public value:string= "0";
+
+    color:string = "red";
+    
+    image:string = '../assets/uno_deck';
   constructor() { }
+
+
+  @Input()card:Card[];
 
   ngOnInit() {
   }
