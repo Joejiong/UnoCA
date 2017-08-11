@@ -14,21 +14,22 @@
 
   <h1>My Content</h1>
   <p>Now we have {{numberOfPlayer}} players</p>
-  <table>
-    <!-- <tr *ngFor="let i of theWholeCards">
-      
-      <td>
-        <img [src]="i.imageUrl" width="28px">
+  
+  
+
+<table>
+    <!-- <tr *ngFor="let i of theWholeCards"> -->
+    <tr *ngFor="let i of arr">
+      <td >
+        <!-- <img [src]="i.imageUrl" width="28px"> -->
+        <p>Player {{i}}</p>
       </td>
-       <td>
-        {{ i.value }}
-      </td>
-      <td>
-        {{ i.color }}
-      </td> 
-    </tr> -->
+    </tr> 
 
   </table>
+
+
+
 </div>
 
 

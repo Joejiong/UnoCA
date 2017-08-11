@@ -37,7 +37,8 @@ export class UnoDeck{
 
     constructor(){
 
-            let prefix:string ="0";
+            
+        let prefix:string ="0";
 
         //creat 
         for(let i=0 ;i<2;i++){
@@ -61,16 +62,60 @@ export class UnoDeck{
                     this.cards.push({
                     value: j+1, 
                     color:UnoDeck.COLOURS[c],
-                    imageUrl:"/assets/uno_deck/c" +c + "_" + prefix +".png"
+                    imageUrl:"./assets/uno_deck/c" +c + "_" + prefix +".png"
                 })
 
 
             }
 
         }
+        //four zero
 
 
-        //
+        for(var c = 0;UnoDeck.COLOURS.length;c++){
+
+
+            for(let i=0 ;i<4;i++){
+
+                let prefix = "0"+i;
+
+                this.cards.push({
+                            value: 0, 
+                            color:UnoDeck.COLOURS[c],
+                            imageUrl:"./assets/uno_deck/c" +c + "_" + prefix +".png"
+
+
+                })
+            }
+        }
+        
+        //four color
+
+        for(let i=0 ;i<4;i++){
+
+                
+
+                this.cards.push({
+                            value: 0, 
+                            color: "COLOD",
+                            imageUrl:"./assets/uno_deck/c4_00.png"
+
+
+                })
+            }
+        //four black
+        for(let i=0 ;i<4;i++){
+
+                
+
+                this.cards.push({
+                            value: 0, 
+                            color: "COLOD",
+                            imageUrl:"./assets/uno_deck/c4_01.png"
+
+
+                })
+            }
 
     }
 

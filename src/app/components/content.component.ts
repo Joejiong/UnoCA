@@ -16,15 +16,30 @@ export class ContentComponent implements OnInit {
 
   theWholeCards: Card[]; 
 
+  
+
   numberOfplayer = 0;
 
   @Input() numberOfPlayer: number;
+
+   //Array type captured in a variable
+  num:number = this.numberOfPlayer;
+
+  arr :number[] ;
+
   //contents: BasketItem[];
   ngOnInit() {
     /* console.log(this.theWholeCards); 
     
     this.theWholeCards = this.unoDeck.cards; */
+    for(let i=1;i<=3;i++){
+
+      this.arr.push(i);
+
+    }
+    console.log(this.arr);
     
+
   }
 
 }
