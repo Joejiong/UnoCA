@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input ,Output, EventEmitter } from '@angular/core';
 import {Card}from '../model/card';
 
 
@@ -10,6 +10,7 @@ import {Card}from '../model/card';
 export class HeaderComponent implements OnInit {
 
   public value:string= "0";
+  public counter: number = 2;
 
     color:string = "red";
     
@@ -21,5 +22,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+  public add():void{
+     if (this.counter<7) {
+        this.counter ++;
+     } 
+   
 
+      console.log(this.counter);
+  }
+  public remove():void{
+    if (this.counter>2) {
+      this.counter --;
+    }  
+    
+
+      console.log(this.counter);
+  }
 }

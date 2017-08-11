@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
 
   
-  inventory : Card[]=[];
+  card : Card[]=[];
   basket: BasketItem[]=[];
 
   ngOnInit(){
