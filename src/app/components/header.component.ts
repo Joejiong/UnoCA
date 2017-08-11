@@ -12,14 +12,16 @@ export class HeaderComponent implements OnInit {
   public value:string= "0";
   public counter: number = 2;
 
+
     color:string = "red";
     
-    image:string = '../assets/uno_deck';
+    image:string = '../assets/uno_deck/c0_00.png';
   constructor() { }
 
 
   @Input()card:Card[];
 
+  @Output("outer") outer = new EventEmitter<number>(); 
   ngOnInit() {
   }
   public add():void{
@@ -37,5 +39,13 @@ export class HeaderComponent implements OnInit {
     
 
       console.log(this.counter);
+  }
+
+  public start():void{
+
+
+    this.outer.emit(this.counter)
+
+
   }
 }

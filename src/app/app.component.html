@@ -1,4 +1,7 @@
-  <app-header></app-header>
-  <app-content></app-content>
+ <!--  <app-header (onStart)="whenStarted($event)"></app-header>
+  <app-content [contents]="basket"></app-content> -->
   
 
+<app-header (outer)="receive($event)"></app-header>
+<app-content [numberOfPlayer]="msgTochild"></app-content>
+<!-- <p>we have {{msgFromHeader}} players</p>  -->

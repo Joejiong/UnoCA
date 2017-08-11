@@ -15,7 +15,7 @@ export interface BasketItem{
 
 export class UnoDeck{
 
-    private cards :Card[]=[];
+    public cards :Card[]=[];
     
 
     private static COLOURS: string[] =  ["red","green", "blue", "yellow"]
@@ -23,7 +23,11 @@ export class UnoDeck{
 
     private shuffle(times: number = 5):void{
         //google, polynomial time, or number times o to power of n & n = array(big o notation); search times ia o(ln2n)
+
+
+
     }
+    
     
     public take(): Card{
         
@@ -36,10 +40,10 @@ export class UnoDeck{
             let prefix:string ="0";
 
         //creat 
-        for(let i ;  i<2;i++){
+        for(let i=0 ;i<2;i++){
 
             for(var c = 0;UnoDeck.COLOURS.length;c++)
-                for(let j ;j<12; j++){
+                for(let j=1 ;j<13; j++){
 
                 let prefix = "0";
                 if (j<10) {

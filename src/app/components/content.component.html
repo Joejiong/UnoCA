@@ -1,15 +1,34 @@
-<h1>
+<div *ngIf="numberOfPlayer==0">
+  <h1>
   content works!
-</h1>
-<table>
+  </h1>
+  <h4>The basket is empty</h4>
+  
+</div>
+<!-- <div *ngIf="contents.length == 0">
+  <h1>The basket is empty</h1>
 
-  <tr>
-    
-  </tr>
+</div> -->
 
+<div *ngIf="numberOfPlayer > 0">
 
+  <h1>My Content</h1>
+  <p>Now we have {{numberOfPlayer}} players</p>
+  <table>
+    <!-- <tr *ngFor="let i of theWholeCards">
+      
+      <td>
+        <img [src]="i.imageUrl" width="28px">
+      </td>
+       <td>
+        {{ i.value }}
+      </td>
+      <td>
+        {{ i.color }}
+      </td> 
+    </tr> -->
 
-
-</table>
+  </table>
+</div>
 
 
