@@ -13,12 +13,12 @@ export interface BasketItem{
     player:string;
 }
 
-export class UnoDeck{
+ export class UnoDeck{
 
     public cards :Card[]=[];
     
 
-    private static COLOURS: string[] =  ["red","green", "blue", "yellow"]
+    COLOURS: string[] =  ["red","green", "blue", "yellow"]
     //private static CARD_NAME =
 
     private shuffle(times: number = 5):void{
@@ -38,13 +38,21 @@ export class UnoDeck{
     constructor(){
 
             
+         this.cards = []; 
+    
+    /* this.theWholeCards = this.unoDeck.cards; 
+    console.log(this.theWholeCards);  */
+                
         let prefix:string ="0";
 
         //creat 
         for(let i=0 ;i<2;i++){
 
-            for(var c = 0;UnoDeck.COLOURS.length;c++)
-                for(let j=1 ;j<13; j++){
+          for(var c = 0;c<this.COLOURS.length;c++) {
+
+
+
+            for(let j=1 ;j<13; j++){
 
                 let prefix = "0";
                 if (j<10) {
@@ -61,13 +69,18 @@ export class UnoDeck{
                 }
                     this.cards.push({
                     value: j+1, 
-                    color:UnoDeck.COLOURS[c],
+                    color:"red",
                     imageUrl:"./assets/uno_deck/c" +c + "_" + prefix +".png"
                 })
 
 
             }
 
+
+
+
+          }
+                
         }
         //four zero
 
@@ -82,7 +95,7 @@ export class UnoDeck{
                 this.cards.push({
                             value: 0, 
                             color:UnoDeck.COLOURS[c],
-                            imageUrl:"./assets/uno_deck/c" +c + "_" + prefix +".png"
+                            imageUrl:"../assets/uno_deck/c" +c + "_" + prefix +".png"
 
 
                 })
@@ -98,7 +111,7 @@ export class UnoDeck{
                 this.cards.push({
                             value: 0, 
                             color: "COLOD",
-                            imageUrl:"./assets/uno_deck/c4_00.png"
+                            imageUrl:"../assets/uno_deck/c4_00.png"
 
 
                 })
@@ -111,7 +124,7 @@ export class UnoDeck{
                 this.cards.push({
                             value: 0, 
                             color: "COLOD",
-                            imageUrl:"./assets/uno_deck/c4_01.png"
+                            imageUrl:"../assets/uno_deck/c4_01.png"
 
 
                 })
@@ -121,4 +134,4 @@ export class UnoDeck{
 
     //
 
-}
+} 
