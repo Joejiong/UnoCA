@@ -31,9 +31,23 @@
          <img [src]="i.imageUrl" [alt]="i.value" width="50px">
       </td> 
     </tr> 
+    <tr *ngFor="let i of baskets">
+      <td >
+        <!-- <img [src]="i.imageUrl" width="28px"> -->
+        <p>Player {{i.player}}</p>
+        
+      </td>
+       <td *ngFor="let j of i.items">
+         <img [src]="j.imageUrl" [alt]="j.value" width="50px">
+      </td> 
+    </tr> 
 
     <hr >
-    
+   <tr>
+    <td *ngFor="let i of cards">
+         <img [src]="i.imageUrl" [alt]="i.value" width="50px">
+    </td>  
+   </tr>
     <tr>
       <td *ngFor="let i of shuffleCards">
         <!-- <img [src]="i.imageUrl" width="28px"> -->
@@ -41,9 +55,7 @@
       </td>
 
       <hr>
-      <td *ngFor="let i of cards">
-         <img [src]="i.imageUrl" [alt]="i.value" width="50px">
-      </td>   
+       
     </tr> 
   </table>
 

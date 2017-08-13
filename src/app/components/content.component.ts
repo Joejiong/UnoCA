@@ -18,8 +18,14 @@ export class ContentComponent implements OnInit {
   theWholeCards: Card[]; 
 
   cards:Card[];
+  
+  b:BasketItem;
 
-  shuffleCards:Card[];
+  playerCards:Card[];
+
+  baskets:BasketItem[]=[];
+
+  shuffleCards:Card[]=[];
      
   alphas:string[]=[]; 
       
@@ -45,25 +51,45 @@ export class ContentComponent implements OnInit {
  
     this.alphas = [];
     this.theWholeCards =[]; 
+
    
     
 
     for(let i=1;i<=this.numberOfPlayer;i++){
 
+      this.playerCards=[];
+      for(let i =1; i<=7;i++){
 
-      this.alphas.push(""+i);
+        this.playerCards.push(this.take());
 
+      }
+
+     
+
+      this.baskets.push({
+
+        items:this.playerCards,
+        player:i 
+      });
+
+       this.alphas.push(""+i);
+      
+      
 
       
        
     }
+      console.log(this.baskets);
 
-    for(let i =1; i<=7;i++)
+    /* for(let i =1; i<=7;i++)
+      this.theWholeCards.push(this.take());
+ */
+    /* for(let i =1; i<=7;i++)
       this.theWholeCards.push({
         value: i,
         color: "red",
         imageUrl: "./assets/uno_deck/c0_00.png"
-      });
+      }); */
 
       /* this.shuffle(); */
 
@@ -80,14 +106,31 @@ export class ContentComponent implements OnInit {
 
 
 
-  }
+  /*  */
+}
+  //take the each card and put to each player          
+  public take(): Card{
+        
 
-  private shuffle():void{
+
+
+        return (this.shuffleCards.pop());
+    }
+
+    //shuffle the cards
+  private shuffle(times:number):void{
         //google, polynomial time, or number times o to power of n & n = array(big o notation); search times ia o(ln2n)
 
-        this.shuffleCards = this.cards; 
+        this.shuffleCards=[];
+        for (var index = 0; index < this.cards.length; index++) {
+          
+          this.shuffleCards.push(this.cards[index]);
+          
+        } 
 
-        for(let i = 0; i<this.cards.length;i++){
+        for (var index = 0; index < times; index++) {
+         
+           for(let i = 0; i<this.cards.length;i++){
 
           
          let temp:Card = this.shuffleCards[Math.floor(Math.random() * 10)];
@@ -95,6 +138,9 @@ export class ContentComponent implements OnInit {
          this.shuffleCards[i]=temp;
 
         }
+          
+        }
+       
     
 
 
@@ -198,7 +244,7 @@ export class ContentComponent implements OnInit {
         console.log(this.cards);
         ///////////
    
-      this.shuffle();
+      this.shuffle(4);
 
    
     

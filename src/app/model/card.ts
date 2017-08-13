@@ -10,7 +10,7 @@ export interface BasketItem{
 
     items: Card[];
 
-    player:string;
+    player:number; 
 }
 
  export class UnoDeck{
@@ -85,7 +85,7 @@ export interface BasketItem{
         //four zero
 
 
-        for(var c = 0;UnoDeck.COLOURS.length;c++){
+        for(var c = 0;c<this.COLOURS.length;c++){
 
 
             for(let i=0 ;i<4;i++){
@@ -94,7 +94,7 @@ export interface BasketItem{
 
                 this.cards.push({
                             value: 0, 
-                            color:UnoDeck.COLOURS[c],
+                            color:this.COLOURS[c],
                             imageUrl:"../assets/uno_deck/c" +c + "_" + prefix +".png"
 
 
